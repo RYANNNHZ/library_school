@@ -27,6 +27,9 @@ class SessionController extends Controller
 
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            if (Auth::user()->role == 'administrator') {
+                return redirect('/admin');
+            }
             return redirect('/library');
         }
     }
@@ -51,7 +54,7 @@ class SessionController extends Controller
             'nama_lengkap.required' => 'maaf anda harus memasukan nama_lengkap terlebih dahulu',
             'username.unique' => 'maaf sepertinya username yang anda masukan sudah ada mohon ganti username dengan username baru🙏',
             'email.email' => 'maaf anda  salah memasukan format email tolong masukan email dengan format yang benar',
-            'email.unique' => 'maaf anda harus memasukan password terlebih dahulu',
+            'email.unique' => 'maaf email yang anda masukan sudah di pakai',
         ]);
 
 
@@ -64,8 +67,8 @@ class SessionController extends Controller
         ]);
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            if (Auth::user()->role == 'administrator') {
-                
+            if (Auth::User()->role == 'administrator') {
+                return redirect('/admin');
             }
             return redirect('/library');
         }

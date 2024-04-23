@@ -12,8 +12,8 @@
                         <div class="row gx-lg-5 align-items-center">
                             <div class="col-lg-6 mb-5 mb-lg-0">
                                 <h1 class="my-5 display-3 fw-bold ls-tight">
-                                    The best offer <br />
-                                    <span class="text-primary">for your business</span>
+                                    Welcome<br />
+                                    <span class="text-primary">to our library</span>
                                 </h1>
                                 <p style="color: hsl(217, 10%, 50.8%)">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -42,7 +42,8 @@
                                                 </div>
                                                 <div class="col-md-6 mb-4">
                                                     @if ($errors->has('nama_lengkap'))
-                                                        <small class="text-danger">{{ $errors->first('nama_lengkap') }}</small>
+                                                        <small
+                                                            class="text-danger">{{ $errors->first('nama_lengkap') }}</small>
                                                     @endif
                                                     <div data-mdb-input-init class="form-outline">
                                                         <input type="text" name="nama_lengkap" id="form3Example2"
@@ -91,7 +92,7 @@
 
                                             <!-- Register buttons -->
                                             <div class="text-center">
-                                                <p>or sign up with:</p>
+                                                <p>or sign in with: <a href="/login" class="">login</a></p>
                                                 <button type="button" data-mdb-button-init data-mdb-ripple-init
                                                     class="btn btn-link btn-floating mx-1">
                                                     <i class="fab fa-facebook-f"></i>

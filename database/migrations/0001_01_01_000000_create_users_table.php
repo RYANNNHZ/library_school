@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('username')->unique();
             $table->string('nama_lengkap');
-            $table->enum('role', ['administrator', 'petugas', 'peminjam'])->default('peminjam');
+            $table->enum('role', ['administrator', 'petugas', 'peminjam']);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -9,6 +9,10 @@ Route::get('/', function () {
 });
 
 Route::resource('library', LibraryController::class);
+Route::get('/admin', [LibraryController::class,'admin']);
+Route::get('/addPetugas', [LibraryController::class,'addPetugas']);
+Route::post('/addPetugas/store', [LibraryController::class,'addPetugasstore'])->name('addPetugas.store');
+Route::get('/addBook', [LibraryController::class,'addBook']);
 
 Route::controller(SessionController::class)->group(function(){
 Route::get('/login','login');

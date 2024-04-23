@@ -12,8 +12,8 @@
                         <div class="row gx-lg-5 align-items-center">
                             <div class="col-lg-6 mb-5 mb-lg-0">
                                 <h1 class="my-5 display-3 fw-bold ls-tight">
-                                    The best offer <br />
-                                    <span class="text-primary">for your business</span>
+                                    Welcome back! <br />
+                                    <span class="text-primary">have enjoy</span>
                                 </h1>
                                 <p style="color: hsl(217, 10%, 50.8%)">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -29,9 +29,9 @@
                                         <form action="/session/store" method="POST">
                                             @csrf
                                             <!-- 2 column grid layout with text inputs for the first and last names --
-                                                    <!-- Email input -->
+                                                                    <!-- Email input -->
                                             @if ($errors->has('email'))
-                                            <small class="text-danger">{{ $errors->first('email') }}</small>
+                                                <small class="text-danger">{{ $errors->first('email') }}</small>
                                             @endif
                                             <div data-mdb-input-init class="form-outline mb-4">
                                                 <input type="email" name="email" value="{{ old('email') }}"
@@ -41,10 +41,11 @@
 
                                             <!-- Password input -->
                                             @if ($errors->has('email'))
-                                            <small class="text-danger">{{ $errors->first('email') }}</small>
+                                                <small class="text-danger">{{ $errors->first('email') }}</small>
                                             @endif
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="password" name="password" value="{{ old('password') }}" id="form3Example4" class="form-control" />
+                                                <input type="password" name="password" value="{{ old('password') }}"
+                                                    id="form3Example4" class="form-control" />
                                                 <label class="form-label" for="form3Example4">Password</label>
                                             </div>
 
@@ -60,12 +61,12 @@
                                             <!-- Submit button -->
                                             <button type="submit" data-mdb-button-init data-mdb-ripple-init
                                                 class="btn btn-primary btn-block mb-4">
-                                                Sign up
+                                                Sign in
                                             </button>
 
                                             <!-- Register buttons -->
                                             <div class="text-center">
-                                                <p>or sign up with:</p>
+                                                <p>or sign up with: <a href="/register">Register</a></p>
                                                 <button type="button" data-mdb-button-init data-mdb-ripple-init
                                                     class="btn btn-link btn-floating mx-1">
                                                     <i class="fab fa-facebook-f"></i>

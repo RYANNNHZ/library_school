@@ -10,4 +10,11 @@ class kategori extends Model
     use HasFactory;
 
     protected $guarded = ['id','created_at','updated_at'];
+
+
+    public function buku()
+    {
+        return $this->belongsToMany(buku::class, 'buku_kategori')->withTimestamps();
+    }
+
 }
