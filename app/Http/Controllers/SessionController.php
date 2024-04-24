@@ -27,7 +27,7 @@ class SessionController extends Controller
 
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            if (Auth::user()->role == 'administrator') {
+            if (Auth::user()->role == 'administrator' || Auth::user()->role == 'petugas') {
                 return redirect('/admin');
             }
             return redirect('/library');
@@ -67,9 +67,6 @@ class SessionController extends Controller
         ]);
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            if (Auth::User()->role == 'administrator') {
-                return redirect('/admin');
-            }
             return redirect('/library');
         }
     }

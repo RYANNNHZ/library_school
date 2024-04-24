@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('buku_kategoris', function (Blueprint $table) {
             $table->id();
             $table->foreignId('buku_id')->references('id')->on('bukus')->onDelete('cascade');
-            $table->foreignId('kateogori_id')->references('id')->on('kategoris')->onDelete('cascade');
+            $table->foreignId('kategori_id')->references('id')->on('kategoris')->onDelete('cascade');
             $table->timestamps();
         });
     }

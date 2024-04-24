@@ -20,6 +20,7 @@ class User extends Authenticatable
         'username',
         'nama_lengkap',
         'email',
+        'role',
         'password',
     ];
 
@@ -44,5 +45,11 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+
+    public function koleksibuku()
+    {
+        return $this->belongsToMany(buku::class,'buku_koleksis');
     }
 }

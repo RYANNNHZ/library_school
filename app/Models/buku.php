@@ -14,6 +14,15 @@ class buku extends Model
 
     public function kategori()
     {
-        return $this->belongsToMany(kategori::class, 'buku_kategori')->withTimestamps();
+        return $this->belongsToMany(kategori::class, 'buku_kategoris')->withTimestamps();
     }
+
+    public function user()
+    {
+        return $this->belongsToMany(User::class, 'buku_koleksis');
+    }
+
+
+    
+
 }

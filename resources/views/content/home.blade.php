@@ -9,58 +9,32 @@
                 @endif
 
 
-                <div class="col-12 col-md-3">
-                    <div class="card bg-dark text-dark">
-                        <img class="card-img"
-                            src="https://gerai.kompas.id/wp-content/uploads/2023/12/COVER-DEPAN-FILOSOFI-TERAS-VERSI-CU-51-PhotoRoom.jpg"
-                            alt="Title" />
-                        <div class="card-img-overlay ">
-                            <h4 style="background: rgba(146, 146, 146, 0.7)" class="card-title p-1 text-light  rounded-2">
-                                Filosfi teras
-                            </h4>
-                        </div>
-                    </div>
-                </div>
+                @foreach ($buku as $b)
+                    <div class="col-12 col-md-3">
+                        <a href="/library/{{ $b->id }}" class="text-decoration-none">
+                            <div class="card text-white bg-dark">
+                                <img class="card-img-top"
+                                    src="https://penerbitbaca.com/wp-content/uploads/2023/10/The-Psychology-of-Money.jpg""
+                                    alt="Title" />
+                                <div class="card-body d-flex justify-content-between">
+                                    <div class="wrapper">
+                                        <h4 class="card-title">{{ $b->judul }}</h4>
+                                        <p class="card-text">{{ $b->penulis }}</p>
+                                    </div>
 
-                <div class="col-12 col-md-3">
-                    <div class="card bg-dark text-dark">
-                        <img class="card-img"
-                            src="https://gerai.kompas.id/wp-content/uploads/2023/12/COVER-DEPAN-FILOSOFI-TERAS-VERSI-CU-51-PhotoRoom.jpg"
-                            alt="Title" />
-                        <div class="card-img-overlay ">
-                            <h4 style="background: rgba(146, 146, 146, 0.7)" class="card-title p-1 text-light  rounded-2">
-                                Filosfi teras
-                            </h4>
-                        </div>
-                    </div>
-                </div>
+                                    @if (Auth::User()->koleksibuku == $b->id)
+                                        <button onclick="bookmark()" class="btn btn-outline-light"><i
+                                                class="bi bi-bookmark-fill"></i></button>
+                                    @else
+                                        <button onclick="bookmark()" class="btn btn-outline-light"><i
+                                                class="bi bi-bookmark"></i></button>
+                                    @endif
 
-                <div class="col-12 col-md-3">
-                    <div class="card bg-dark text-dark">
-                        <img class="card-img"
-                            src="https://gerai.kompas.id/wp-content/uploads/2023/12/COVER-DEPAN-FILOSOFI-TERAS-VERSI-CU-51-PhotoRoom.jpg"
-                            alt="Title" />
-                        <div class="card-img-overlay ">
-                            <h4 style="background: rgba(146, 146, 146, 0.7)" class="card-title p-1 text-light  rounded-2">
-                                Filosfi teras
-                            </h4>
-                        </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-
-
-                <div class="col-12 col-md-3">
-                    <div class="card bg-dark text-dark">
-                        <img class="card-img"
-                            src="https://gerai.kompas.id/wp-content/uploads/2023/12/COVER-DEPAN-FILOSOFI-TERAS-VERSI-CU-51-PhotoRoom.jpg"
-                            alt="Title" />
-                        <div class="card-img-overlay ">
-                            <h4 style="background: rgba(146, 146, 146, 0.7)" class="card-title p-1 text-light  rounded-2">
-                                Filosfi teras
-                            </h4>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
         </div>

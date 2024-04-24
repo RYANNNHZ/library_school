@@ -17,5 +17,6 @@
 
     <script src="{{ url('js') . '/popper.js' }}"></script>
     <script src="{{ url('js') . '/bootstrap.js' }}"></script>
+    <script src="{{ url('js') . '/index.js' }}"></script>
 </body>
 </html>

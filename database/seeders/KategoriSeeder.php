@@ -26,16 +26,5 @@ class KategoriSeeder extends Seeder
         //     'nama_kategori' => 'kamus'
         // ]);
 
-        kategori::insert([
-            ['nama_kategori' => 'fiksi'],
-            ['nama_kategori' => 'nonfiksi'],
-            ['nama_kategori' => 'sci-fi'],
-            ['nama_kategori' => 'romance'],
-            ['nama_kategori' => 'fantasy'],
-            ['nama_kategori' => 'horor'],
-            ['nama_kategori' => 'misteri'],
-            ['nama_kategori' => 'komedi'],
-            ['nama_kategori' => 'self improvement'],
-        ]);
     }
 }

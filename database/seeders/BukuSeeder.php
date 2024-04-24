@@ -36,22 +36,6 @@ class BukuSeeder extends Seeder
         //     ]);
         // }
 
-        $buku1 = buku::create([
-            'judul' => $faker->sentence(1),
-            'penuluis' => $faker->name,
-            'penerbit' => $faker->name,
-            'tahun_terbit' => date('Y-m-d H:i:s')
-        ]);
 
-        buku_kategori::insert([
-            [
-                'buku_id' => $buku1->id,
-                'kategori_id' => 5
-            ],
-            [
-                'buku_id' => $buku1->id,
-                'kategori_id' => 1
-            ]
-        ]);
     }
 }
