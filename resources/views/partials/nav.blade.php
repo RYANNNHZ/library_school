@@ -19,12 +19,14 @@
                     </div>
                 </li>
             </ul>
-            <form class="d-flex my-2 my-lg-0">
-                <input class="form-control me-sm-2" type="text" placeholder="Search" />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                    Search
-                </button>
-            </form>
+
+            <div class="div wrapper-profil d-flex align-items-center">
+                <h5 class="">{{ Auth::User()->username }}</h5>
+                <img style="max-width: 50px"
+                    src="https://cdn.icon-icons.com/icons2/3054/PNG/512/account_profile_user_icon_190494.png"
+                    alt="">
+            </div>
+
         </div>
     </div>
 </nav>

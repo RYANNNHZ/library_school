@@ -17,7 +17,7 @@ class LibraryController extends Controller
      */
     public function index()
     {
-        return view('content.home')->with(['title' => 'home','buku' => buku::all()]);
+        return view('content.home')->with(['title' => 'home', 'buku' => buku::all()]);
     }
 
 
@@ -83,7 +83,7 @@ class LibraryController extends Controller
             }
         });
 
-        return redirect('/admin')->with('sukses','berhasil mengedit buku');
+        return redirect('/admin')->with('sukses', 'berhasil mengedit buku');
     }
 
     /**
@@ -97,7 +97,16 @@ class LibraryController extends Controller
 
     public function admin()
     {
-        return view('content.admin')->with(['title' => 'admin', 'buku' => buku::all()]);
+        $data = [
+            'books' => buku::all()->count(),
+            'categories' => kategori::all()->count(),
+            'users' => User::all()->count(),
+            'petugases' => User::where('role', 'petugas')->count(),
+
+        ];
+
+
+        return view('content.admin')->with(['title' => 'admin', 'buku' => buku::paginate(3), 'kategori' => kategori::all(), 'data' => $data]);
     }
 
 
@@ -171,7 +180,7 @@ class LibraryController extends Controller
 
 
 
-        return redirect('/addBook')->with('sukses' ,'berhasil memasukan data');
+        return redirect('/addBook')->with('sukses', 'berhasil memasukan data');
     }
 
 
@@ -179,5 +188,44 @@ class LibraryController extends Controller
     {
         buku::find($id)->delete();
         return redirect('/admin');
+    }
+
+
+    public function addcategory()
+    {
+        return view('content.addcategory')->with(['title' => 'addcategory']);
+    }
+
+
+    public function storecategory(Request $request)
+    {
+        $request->validate([
+            'nama_kategori' => 'required',
+        ], [
+            'nama_kategori.required' => 'mohon masukan category baru',
+        ]);
+
+        kategori::create([
+            'nama_kategori' => $request->input('nama_kategori')
+        ]);
+
+        return redirect('/addcategory');
+    }
+
+
+    public function delcategory($id)
+    {
+
+        kategori::find($id)->delete();
+        return redirect('/admin');
+    }
+
+
+    public function cari(Request $request)
+    {
+        $cari = $request->input('cari');
+        $buku = buku::whereAny(['judul', 'penulis', 'penerbit'], 'like', "%$cari%")->get();
+
+        return view('content.home')->with(['title' => 'home', 'buku' => $buku]);
     }
 }

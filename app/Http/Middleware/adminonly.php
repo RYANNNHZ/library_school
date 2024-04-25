@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class isHasLogin
+class adminonly
 {
     /**
      * Handle an incoming request.
@@ -16,13 +16,10 @@ class isHasLogin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check()){
-            if(Auth::User()->role == 'administrator' || Auth::User()->role == 'petugas'){
+        if(Auth::User()->role !== 'administrator'){
+            if(Auth::User()->role == 'petugas'){
                 return redirect('/admin');
-            }elseif(Auth::User()->role == 'peminjam'){
-                return redirect('/library');
             }
-
         }
         return $next($request);
     }

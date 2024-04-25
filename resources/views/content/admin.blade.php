@@ -57,8 +57,8 @@
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
                 target="_blank">
-                <img src="./assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo" />
-                <span class="ms-1 font-weight-bold text-white">Material Dashboard 2</span>
+                <img src="./assets/img/logoadmin.jpg" class="navbar-brand-img h-100" alt="main_logo" />
+                <span class="ms-1 font-weight-bold text-white">Library school</span>
             </a>
         </div>
 
@@ -66,71 +66,6 @@
 
         <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="./dashboard.html">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">dashboard</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Dashboard</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="./addBook">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">book</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">addBook</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="./billing.html">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">receipt_long</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Billing</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="./virtual-reality.html">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">view_in_ar</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Virtual Reality</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="./rtl.html">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">RTL</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="./notifications.html">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">notifications</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Notifications</span>
-                    </a>
-                </li>
-
-                <li class="nav-item mt-3">
-                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">
-
-                    </h6>
-                </li>
 
                 @if (Auth::User()->role == 'administrator')
                     <li class="nav-item">
@@ -144,6 +79,35 @@
                     </li>
                 @endif
 
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="./addBook">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">book</i>
+                        </div>
+
+                        <span class="nav-link-text ms-1">addBook</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/addcategory">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">category</i>
+                        </div>
+
+                        <span class="nav-link-text ms-1">add category</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item mt-3">
+                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">
+
+                    </h6>
+                </li>
+
+
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/logout">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -154,23 +118,11 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="./sign-up.html">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">assignment</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Sign Up</span>
-                    </a>
-                </li>
             </ul>
         </div>
 
         <div class="sidenav-footer position-absolute w-100 bottom-0">
             <div class="mx-3">
-                <a class="btn btn-outline-primary mt-4 w-100"
-                    href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree"
-                    type="button">Documentation</a>
                 <a class="btn bg-gradient-primary w-100"
                     href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree"
                     type="button">Upgrade to pro</a>
@@ -190,10 +142,10 @@
                             <a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                         </li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">
-                            index
+                            admin
                         </li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">index</h6>
+                    <h6 class="font-weight-bolder mb-0">admin</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -332,10 +284,6 @@
         <!-- End Navbar -->
 
         <div class="container-fluid py-4">
-            <h6>
-                If you are not redirected automatically, follow
-                <a href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard ">this link</a>.
-            </h6>
             <div class="row">
                 <div class="col-lg-7 position-relative z-index-2">
                     <div class="card card-plain mb-4">
@@ -358,13 +306,13 @@
                                 <div class="card-header p-3 pt-2">
                                     <div
                                         class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
-                                        <i class="material-icons opacity-10">weekend</i>
+                                        <i class="material-icons opacity-10">category</i>
                                     </div>
                                     <div class="text-end pt-1">
                                         <p class="text-sm mb-0 text-capitalize">
-                                            Bookings
+                                            categories
                                         </p>
-                                        <h4 class="mb-0">281</h4>
+                                        <h4 class="mb-0">{{ $data['categories'] }}</h4>
                                     </div>
                                 </div>
 
@@ -387,7 +335,7 @@
                                         <p class="text-sm mb-0 text-capitalize">
                                             Today's Users
                                         </p>
-                                        <h4 class="mb-0">2,300</h4>
+                                        <h4 class="mb-0">{{ $data['users'] }}</h4>
                                     </div>
                                 </div>
 
@@ -405,13 +353,13 @@
                                 <div class="card-header p-3 pt-2 bg-transparent">
                                     <div
                                         class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                                        <i class="material-icons opacity-10">store</i>
+                                        <i class="material-icons opacity-10">book</i>
                                     </div>
                                     <div class="text-end pt-1">
                                         <p class="text-sm mb-0 text-capitalize">
-                                            Revenue
+                                            books
                                         </p>
-                                        <h4 class="mb-0">34k</h4>
+                                        <h4 class="mb-0">{{ $data['books'] }}</h4>
                                     </div>
                                 </div>
 
@@ -431,9 +379,9 @@
                                     </div>
                                     <div class="text-end pt-1">
                                         <p class="text-sm mb-0 text-capitalize">
-                                            Followers
+                                            petugas
                                         </p>
-                                        <h4 class="mb-0">+91</h4>
+                                        <h4 class="mb-0">{{ $data['petugases'] }}</h4>
                                     </div>
                                 </div>
 
@@ -468,11 +416,13 @@
                                                             <td>{{ $b->penulis }}</td>
                                                             <td>{{ $b->penerbit }}</td>
                                                             <td>
-                                                                <a href="/library/{{$b->id}}" class="btn btn-warning">show</a>
+                                                                <a href="/library/{{ $b->id }}"
+                                                                    class="btn btn-warning">show</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
                                                 </table>
+                                                {{ $buku->links() }}
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-5">
@@ -581,19 +531,28 @@
                 <div class="col-lg-7">
                     <div class="card z-index-2">
                         <div class="card-header pb-0">
-                            <h6>Sales overview</h6>
-                            <p class="text-sm">
-                                <i class="fa fa-arrow-up text-success"></i>
-                                <span class="font-weight-bold">4% more</span>
-                                in 2021
-                            </p>
+                            <h6>cetegories</h6>
                         </div>
                         <div class="card-body p-3">
-                            <div class="chart">
-                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                            <div class="table-responsive overflow-y-auto">
+                                <table style="max-height: 400px" class="table align-items-center overflow-auto">
+                                    @foreach ($kategori as $k)
+                                        <tr>
+                                            <td>{{ $k->id }}</td>
+                                            <td>{{ $k->nama_kategori }}</td>
+                                            <td>
+                                                <a href="/del/{{ $k->id }}/category"
+                                                    class="btn btn-danger">delete</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
 
