@@ -1,5 +1,8 @@
+@dd(Auth)
 @extends('master')
-
+@auth
+    
+@endauth
 @section('content')
     <div class="container-fluid mt-5 p-5">
         <div class="container">
@@ -32,8 +35,16 @@
 
                                         <div class="wrapper-event d-flex justify-content-center align-items-center ">
                                             <div class="wrapper-event d-flex">
+
+                                                {{-- @if (Auth::User()->koleksibuku == $buku->id)
+
+                                                @else
+
+                                                @endif --}}
                                                 <button onclick="bookmark()" class="btn btn-outline-light ms-1 "><i
                                                         class="bi bi-bookmark"></i></button>
+
+
                                                 <button onclick="bookmark()" class="btn btn-outline-light ms-1"><i
                                                         class="bi bi-book"></i></button>
                                             </div>

@@ -52,4 +52,8 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(buku::class,'buku_koleksis');
     }
+    public function pinjambuku()
+    {
+        return $this->belongsToMany(buku::class,'peminjams');
+    }
 }

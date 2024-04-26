@@ -20,12 +20,12 @@
                 </li>
             </ul>
 
-            <div class="div wrapper-profil d-flex align-items-center">
+            <a class="div wrapper-profil d-flex align-items-center text-dark text-decoration-none" href="/Udashboard/{{ Auth::User()->id }}">
                 <h5 class="">{{ Auth::User()->username }}</h5>
                 <img style="max-width: 50px"
                     src="https://cdn.icon-icons.com/icons2/3054/PNG/512/account_profile_user_icon_190494.png"
                     alt="">
-            </div>
+            </a>
 
         </div>
     </div>

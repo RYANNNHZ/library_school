@@ -7,6 +7,7 @@ use App\Models\buku_kategori;
 use App\Models\kategori;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -225,7 +226,20 @@ class LibraryController extends Controller
     {
         $cari = $request->input('cari');
         $buku = buku::whereAny(['judul', 'penulis', 'penerbit'], 'like', "%$cari%")->get();
-
         return view('content.home')->with(['title' => 'home', 'buku' => $buku]);
+    }
+
+
+    public function bookmark($id)
+    {
+        $user = User::find($id);
+        return view('content.bookmark')->with(['title' => 'bookmark', 'user' => $user]);
+    }
+
+    public function Udashboard($id)
+    {
+
+        $user = User::find($id);
+        return view('content.pinjam')->with(['title' => 'pinjam', 'user' => $user]);
     }
 }

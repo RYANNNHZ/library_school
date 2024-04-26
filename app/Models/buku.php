@@ -22,7 +22,8 @@ class buku extends Model
         return $this->belongsToMany(User::class, 'buku_koleksis');
     }
 
-
-    
-
+    public function userpinjam()
+    {
+        return $this->belongsToMany(User::class, 'peminjams');
+    }
 }

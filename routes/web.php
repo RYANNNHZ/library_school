@@ -21,6 +21,8 @@ Route::controller(LibraryController::class)->group(function () {
     Route::get('/addBook', 'addBook')->middleware(isLogin::class)->middleware(checkrole::class);
     Route::get('/addcategory', 'addcategory')->middleware(isLogin::class)->middleware(checkrole::class);
     Route::post('/addBook/store', 'addBookstore')->name('addbook.store');
+    Route::get('/Udashboard/{id}','Udashboard')->middleware(isLogin::class);
+    Route::get('/bookmark/{id}','bookmark')->middleware(isLogin::class);
     Route::post('/addcategory/store', 'storecategory');
     Route::get('/del/{id}', 'del');
     Route::get('/del/{id}/category', 'delcategory');
